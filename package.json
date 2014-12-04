@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "an-array": "^1.0.0",
-    "eases": "^1.0.2",
+    "eases": "^1.0.3",
     "frame-loop": "^1.1.1",
     "tween-ticker": "^1.0.0",
     "xtend": "^4.0.0"

@@ -21,7 +21,8 @@ module.exports = function(opt) {
     emitter.to = createTo(ticker)
     emitter.vector = ticker.pushArray.bind(ticker)
     emitter.clear = ticker.clear.bind(ticker)
-
+    emitter.tick = ticker.tick.bind(ticker)
+    
     if (opt.running !== false)
         emitter.run()
 

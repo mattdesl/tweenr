@@ -2,7 +2,9 @@
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-minimal tweening engine
+Minimal tweening engine. 
+
+## motivations
 
 ## Usage
 
