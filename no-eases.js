@@ -2,12 +2,12 @@ var loop = require('frame-loop')
 var Ticker = require('tween-ticker')
 var isArray = require('an-array')
 
-function push(ticker) {
-    return function to(start, target, opt) {
-        if (isArray(start) && isArray(target))
-            return ticker.pushArray(start, target, opt)
+function createTo(ticker) {
+    return function to(target, opt) {
+        if (Array.isArray(target))
+            return ticker.pushObjects(target, opt)
         else
-            return ticker.pushObject(start, target)
+            return ticker.pushObject(target, opt)
     }
 }
 
@@ -17,7 +17,9 @@ module.exports = function(opt) {
     var emitter = loop(function(dt) {
         ticker.tick(dt/1000)
     })
-    emitter.to = push(ticker)
+    emitter.ticker = ticker
+    emitter.to = createTo(ticker)
+    emitter.vector = ticker.pushArray.bind(ticker)
     emitter.clear = ticker.clear.bind(ticker)
 
     if (opt.running !== false)
