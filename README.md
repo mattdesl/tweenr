@@ -17,7 +17,9 @@ tweenr.to(data, {
 })
 ```
 
-## features
+## motivations
+
+I love the simplicity of GreenSock's animation API, but only find myself using a fraction of their monolithic tools.  
 
 - common set of eases
 - works in node and the browser
@@ -27,13 +29,14 @@ tweenr.to(data, {
 - tweens are cancellable
 - triggers onComplete, onStart, onUpdate events
 
-## motivations
-
-This project takes a module-first approach, so its components can be taken apart and reassembled how you see fit. It brings together a [ticker](https://www.npmjs.org/package/tween-ticker), [easing equations](https://www.npmjs.org/package/eases), and a [render loop](https://www.npmjs.org/package/raf-loop).
-
-It can also interpolate arrays, which is ideal alongside the wide ecosystem of 2D and 3D modules on npm. 
-
 For a more fully-featured and battle-tested framework, you may be interested in [TweenMax](https://www.npmjs.org/package/gsap) or [tween.js](https://github.com/sole/tween.js).
+
+## future thoughts
+
+Some ideas I may choose to explore:
+
+- returning promises, like in [gsap-promise](https://www.npmjs.org/package/gsap-promise)
+- modular Tween types, e.g. `tween-array` (garbage free) or `tween-css` 
 
 ## Usage
 
