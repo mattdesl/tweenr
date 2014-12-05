@@ -2,7 +2,7 @@
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-Minimal tweening engine which operates on numbers and arrays.
+Minimal tweening engine which operates on numbers and arrays. 
 
 ```js
 var tweenr = require('tweenr')()
@@ -25,7 +25,7 @@ Some features of `tweenr`:
 
 - common set of eases
 - works in node and the browser
-- small, focused and modular design; e.g. [tween-ticker](https://www.npmjs.org/package/tween-ticker) is useful if you don't need eases or a frame loop
+- small, focused and modular design; e.g. [tween-ticker](https://www.npmjs.org/package/tween-ticker) is a good fit for modular components
 - interpolates numbers and arrays (i.e. vectors, colors)
 - can tween multiple elements at once
 - tweens are cancellable
@@ -46,8 +46,8 @@ Some ideas I may choose to explore:
 
 Creates a new instanceof Tweenr and attaches itself to an application-wide render loop (to minimize animation frame requests). By default, this includes a [common set of eases](https://www.npmjs.org/package/eases). Options:
 
-- `eases` can be specified to provide a new set of easing functions
-- `defaultEase` the default easing function, or a string to use as a lookup into the `eases` object
+- `eases` can be specified to provide a new set of easing functions, defaults to [the eases module](https://www.npmjs.org/package/eases)
+- `defaultEase` the default easing function, or a string to use as a lookup into the `eases` object. defaults to a linear function
 
 #### `tween = tweenr.to(element, opt)`
 

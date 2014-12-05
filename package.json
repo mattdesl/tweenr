@@ -15,7 +15,6 @@
     "inherits": "^2.0.1",
     "mixes": "^1.0.4",
     "raf-loop": "^1.0.0",
-    "right-now": "^1.0.0",
     "tween-ticker": "^1.0.0",
     "xtend": "^4.0.0"
   },
@@ -28,6 +27,7 @@
     "bunny": "^1.0.1",
     "canvas-orbit-camera": "^1.0.1",
     "canvas-testbed": "^1.0.3",
+    "color-style": "^1.0.0",
     "domready": "^1.0.7",
     "events": "^1.0.2",
     "gl-basic-shader": "^1.2.2",
