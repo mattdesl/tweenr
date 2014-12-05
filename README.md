@@ -103,7 +103,16 @@ The return value of `tweenr.to()` is a tween with the following:
 
 #### `tween.cancel()`
 
-Cancels the tween, removing it from the queue on the next tick without applying any further interpolation.
+Cancels the tween, removing it from the queue on the next tick without applying any further interpolation. 
+
+#### `tween.on(event, func)`
+
+The returned tween is an event emitter with the following events:
+
+- `start` triggered when the tween is first started
+- `cancelling` triggered before the tween completes, initiating from a call to `cancel()`
+- `complete` triggered when the tween is completed
+- `update` triggered after the tween updates its values
 
 ## License
 
