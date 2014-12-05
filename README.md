@@ -97,7 +97,9 @@ Disposes this instance, removing it from the application-wide frame loop.
 
 #### `tweenr.on('tick', fn)`
 
-Attaches a function to the application-wide frame loop. Since `tweenr` is an event emitter, you can use `tweenr.removeListener` to remove it.
+Attaches a function to this tweenr instance. The event is triggered by the application-wide frame loop with a `delta` parameter in seconds.
+
+This event will stop after `tweenr.dispose()`. 
 
 --
 
