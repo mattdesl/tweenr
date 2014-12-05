@@ -1,7 +1,33 @@
-var eases = require('eases')
 var xtend = require('xtend')
-var base = require('./no-eases')
+var eases = require('eases')
+var Ticker = require('tween-ticker')
+var EventEmitter = require('events').EventEmitter;
+var inherits = require('inherits')
+var mixin = require('mixes')
+var loop = require('./loop')
 
-module.exports = function Tweenr(opt) {
-    return base(xtend({ eases: eases }, opt))
+var defaultOpt = { eases: eases }
+
+module.exports = Tweenr
+function Tweenr(opt) {
+    if (!(this instanceof Tweenr))
+        return new Tweenr(opt)
+
+    Ticker.call(this, xtend(defaultOpt, opt))
+    EventEmitter.call(this)
+
+    this._handleTick = function(dt) {
+        dt /= 1000
+        this.emit('tick', dt)
+        this.tick(dt)
+    }.bind(this)
+
+    loop.on('tick', this._handleTick)
+}
+
+inherits(Tweenr, Ticker)
+mixin(Tweenr, EventEmitter.prototype)
+
+Tweenr.prototype.dispose = function() {
+    loop.removeListener('tick', this._handleTick)
 }

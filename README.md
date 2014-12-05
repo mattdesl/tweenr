@@ -19,7 +19,9 @@ tweenr.to(data, {
 
 ## motivations
 
-I love the simplicity of GreenSock's animation API, but only find myself using a fraction of their monolithic tools.  
+I love the simplicity of GreenSock's animation tools, but I don't agree with some of their practices (i.e. polluting tweened objects with variables) and find myself only using a tiny fraction of their entire codebase.
+
+Some features of `tweenr`:
 
 - common set of eases
 - works in node and the browser
@@ -28,8 +30,6 @@ I love the simplicity of GreenSock's animation API, but only find myself using a
 - can tween multiple elements at once
 - tweens are cancellable
 - triggers onComplete, onStart, onUpdate events
-
-For a more fully-featured and battle-tested framework, you may be interested in [TweenMax](https://www.npmjs.org/package/gsap) or [tween.js](https://github.com/sole/tween.js).
 
 ## future thoughts
 
