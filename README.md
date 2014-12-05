@@ -20,11 +20,10 @@ tweenr.to(data, {
 ## features
 
 - common set of eases
-- high-performance requestAnimationFrame loop
 - works in node and the browser
 - small, focused and modular design; e.g. [tween-ticker](https://www.npmjs.org/package/tween-ticker) can be used on its own
 - interpolates numbers and arrays (i.e. vectors, colors)
-- can treat a list of objects as a single tween
+- can tween multiple elements at once
 - tweens are cancellable
 - triggers onComplete, onStart, onUpdate events
 
