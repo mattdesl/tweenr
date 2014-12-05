@@ -6,3 +6,4 @@ bundle.js
 test
 test.js
 demo/
+.npmignore
