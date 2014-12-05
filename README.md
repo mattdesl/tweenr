@@ -91,6 +91,14 @@ tweenr.to(elements, {
 
 Clears all tweens stored in this ticker instance, cancelling them and completing them if they were active.
 
+#### `tweenr.dispose()`
+
+Disposes this instance, removing it from the application-wide frame loop. 
+
+#### `tweenr.on('tick', fn)`
+
+Attaches a function to the application-wide frame loop. Since `tweenr` is an event emitter, you can use `tweenr.removeListener` to remove it.
+
 --
 
 The return value of `tweenr.to()` is a tween with the following:
