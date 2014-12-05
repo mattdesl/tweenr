@@ -10,10 +10,8 @@
     "url": "https://github.com/mattdesl"
   },
   "dependencies": {
-    "an-array": "^1.0.0",
     "eases": "^1.0.3",
     "events": "^1.0.2",
-    "frame-loop": "^1.1.1",
     "inherits": "^2.0.1",
     "mixes": "^1.0.4",
     "raf-loop": "^1.0.0",
