@@ -29,7 +29,7 @@ Some features of `tweenr`:
 - interpolates numbers and arrays (i.e. vectors, colors)
 - can tween multiple elements at once
 - tweens are cancellable
-- triggers onComplete, onStart, onUpdate events
+- triggers complete, start, update, cancelling events
 
 ## future thoughts
 
@@ -56,9 +56,6 @@ Tweens the `element`, which can be an array of objects, or a single object. `opt
 - `delay` in seconds, default 0
 - `duration` in seconds, default 0
 - `ease` the easing function, [see here](https://www.npmjs.org/package/eases) -- defaults to `tweenr.defaultEase` or linear
-- `onComplete` called when the tween is complete, with event parameter `{ target }`
-- `onStart` called when the tween is started, with event parameter `{ target }`
-- `onUpdate` called when the tween is updated, with event parameter `{ target }`
 
 Any other properties to `opt` will be tweened if *they are consistent with `element`* and also if they are a `number` or [an array](https://www.npmjs.org/package/an-array). 
 
@@ -72,10 +69,9 @@ tweenr.to(elements, {
     opacity: 1,
     shape: [5, 0],
     duration: 3,
-    delay: 0.25, 
-    onComplete: function(ev) {
-        console.log(ev.target[0].shape)
-    }
+    delay: 0.25
+}).on('complete', function(ev) {
+    console.log(ev.target[0].shape)
 })
 
 /*
