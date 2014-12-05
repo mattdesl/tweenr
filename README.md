@@ -97,7 +97,7 @@ Disposes this instance, removing it from the application-wide frame loop.
 
 #### `tweenr.on('tick', fn)`
 
-Attaches a function to this tweenr instance. The event is triggered by the application-wide frame loop with a `delta` parameter in seconds.
+Attaches a function to this tweenr's tick. The event is triggered by the application-wide frame loop with a `delta` parameter in seconds.
 
 This event will stop after `tweenr.dispose()`. 
 
