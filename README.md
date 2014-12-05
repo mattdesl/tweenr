@@ -49,13 +49,13 @@ Creates a new instanceof Tweenr and attaches itself to an application-wide rende
 - `eases` can be specified to provide a new set of easing functions
 - `defaultEase` the default easing function, or a string to use as a lookup into the `eases` object
 
-#### `tween = ticker.to(element, opt)`
+#### `tween = tweenr.to(element, opt)`
 
 Tweens the `element`, which can be an array of objects, or a single object. `opt` can be the following:
 
 - `delay` in seconds, default 0
 - `duration` in seconds, default 0
-- `ease` the easing function, [see here](https://www.npmjs.org/package/eases) -- defaults to `defaultEase` or linear
+- `ease` the easing function, [see here](https://www.npmjs.org/package/eases) -- defaults to `tweenr.defaultEase` or linear
 - `onComplete` called when the tween is complete, with event parameter `{ target }`
 - `onStart` called when the tween is started, with event parameter `{ target }`
 - `onUpdate` called when the tween is updated, with event parameter `{ target }`
