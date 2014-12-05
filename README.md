@@ -25,7 +25,7 @@ Some features of `tweenr`:
 
 - common set of eases
 - works in node and the browser
-- small, focused and modular design; e.g. [tween-ticker](https://www.npmjs.org/package/tween-ticker) can be used on its own
+- small, focused and modular design; e.g. [tween-ticker](https://www.npmjs.org/package/tween-ticker) is useful if you don't need eases or a frame loop
 - interpolates numbers and arrays (i.e. vectors, colors)
 - can tween multiple elements at once
 - tweens are cancellable
@@ -60,7 +60,7 @@ Tweens the `element`, which can be an array of objects, or a single object. `opt
 - `onStart` called when the tween is started, with event parameter `{ target }`
 - `onUpdate` called when the tween is updated, with event parameter `{ target }`
 
-Any other properties to `opt` will be tweened if *they are consistent with `element`* and also if they are a `number` or [an array](https://www.npmjs.org/package/an-array).
+Any other properties to `opt` will be tweened if *they are consistent with `element`* and also if they are a `number` or [an array](https://www.npmjs.org/package/an-array). 
 
 ```js
 var elements = [
