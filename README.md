@@ -25,7 +25,7 @@ Some features of `tweenr`:
 
 - common set of eases
 - works in node and the browser
-- small, focused and modular design; e.g. [tween-ticker](https://www.npmjs.org/package/tween-ticker) is a good fit for modular components
+- small, focused and modular design; e.g. [tween-ticker](https://www.npmjs.org/package/tween-ticker) is a good fit for [modular components](https://github.com/mattdesl/tweenr/tree/master/test/fancy-box/index.js)
 - interpolates numbers and arrays (i.e. vectors, colors)
 - can tween multiple elements at once
 - tweens are cancellable
