@@ -1,33 +1,32 @@
 /*
-    
-    Custom tween types are experimental. Thoughts:
+    Most tween engines tend to create garbage when interpolating
+    from one object to another, since it needs to build up a "store"
+    of the keys being tweened. 
 
-        - tween-object 
-        - tween-objects
-        - tween-array
-        - tween-dom 
-
-    Problems:
-
-        - use a different ticker method? or try to ducktype into to() ?
-        - handling objects across module versions could be problematic
-        - base tween should have its own tick(dt) handling rather than
-          coupling it into the tween-ticker
+    If we want to optimize for GC, we can use tween-array which
+    creates far less garbage.
  */
 
 require('canvas-testbed')(render)
 
+var tweenr = require('../')({ defaultEase: 'backOut' })
 var array = require('tween-array')
-var tweenr = require('../')({ defaultEase: 'expoOut' })
+var mouse = require('touch-position').emitter()
 
-var start = [0, 20], 
-    end = [100, 20],
-    tmp = start.slice()
+var position = [100, 0]
 
-tweenr.push(array(start, end, { duration: 1, delay: 0.4, output: tmp }))
+mouse.on('move', function() {
+    //kill any outstanding tweens
+    tweenr.clear()
+    
+    //1 second tween from last mouse position to new mouse position
+    tweenr.push(array(position, mouse.position, { duration: 1 }))
+})
 
 function render(ctx, width, height) {
-    ctx.clearRect(0, 0, width, height)
-    
-    ctx.fillRect(tmp[0], tmp[1], 40, 40)    
+    ctx.clearRect(0,0,width,height)
+
+    ctx.beginPath()
+    ctx.arc(position[0], position[1], 50, 0, Math.PI*2)
+    ctx.fill()
 }

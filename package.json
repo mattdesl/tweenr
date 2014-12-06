@@ -1,6 +1,6 @@
 {
   "name": "tweenr",
-  "version": "1.0.9",
+  "version": "2.0.2",
   "description": "minimal tweening engine",
   "main": "index.js",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "inherits": "^2.0.1",
     "mixes": "^1.0.4",
     "raf-loop": "^1.0.0",
-    "tween-ticker": "^1.0.0",
+    "tween-ticker": "^3.0.1",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
@@ -36,7 +36,10 @@
     "gl-mat4": "^1.0.1",
     "gl-wireframe": "^1.0.1",
     "mesh-viewer": "^1.0.0",
-    "tape": "^3.0.3"
+    "mouse-position": "^1.0.0",
+    "tape": "^3.0.3",
+    "touch-position": "^1.0.3",
+    "tween-objects": "^1.0.0"
   },
   "scripts": {
     "test": "node test.js"
