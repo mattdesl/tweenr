@@ -30,13 +30,7 @@ Some features of `tweenr`:
 - can tween multiple elements at once
 - tweens are cancellable
 - triggers complete, start, update, cancelling events
-
-## future thoughts
-
-Some ideas I may choose to explore:
-
-- returning promises, like in [gsap-promise](https://www.npmjs.org/package/gsap-promise)
-- modular Tween types, e.g. `tween-array` (garbage free) or `tween-css` 
+- extensible and optimizable tween types: [tween-array](https://www.npmjs.org/package/tween-array), [tween-chain](https://www.npmjs.org/package/tween-chain), etc
 
 ## Usage
 
@@ -49,15 +43,21 @@ Creates a new instanceof Tweenr and attaches itself to an application-wide rende
 - `eases` can be specified to provide a new set of easing functions, defaults to [the eases module](https://www.npmjs.org/package/eases)
 - `defaultEase` the default easing function, or a string to use as a lookup into the `eases` object. defaults to a linear function
 
+#### `tween = tweenr.to(tween)`
+
+If only one argument is given, this method pushes a new tween onto the stack, returning that tween for chaining. Same as `tweenr.push(tween)`. 
+
 #### `tween = tweenr.to(element, opt)`
 
-Tweens the `element`, which can be an array of objects, or a single object. `opt` can be the following:
+A convenience version of `to()` which handles the most common case: object tweening. If the second argument, `opt` is truthy and an object, this method creates a new [object tween](https://www.npmjs.org/package/tween-objects) and pushes it onto the stack.
 
-- `delay` in seconds, default 0
-- `duration` in seconds, default 0
-- `ease` the easing function, [see here](https://www.npmjs.org/package/eases) -- defaults to `tweenr.defaultEase` or linear
+The tween modifies `element`, which can be an array of objects, or a single object. `opt` can be the following:
 
-Any other properties to `opt` will be tweened if *they are consistent with `element`* and also if they are a `number` or [an array](https://www.npmjs.org/package/an-array). 
+- `delay` in time units, default 0
+- `duration` in time units, default 0
+- `ease` is a string (lookup for the `eases` passed at constructor) or an [ease function](https://www.npmjs.org/package/eases), defaults to `tweenr.defaultEase`
+
+Any other properties to `opt` will be tweened if *they are consistent with `element`* and also if they are a `number` or [an array](https://www.npmjs.org/package/an-array).
 
 ```js
 var elements = [
@@ -65,13 +65,11 @@ var elements = [
     { x: 15, opacity: 0 }
 ]
 
-tweenr.to(elements, { 
+var tween = tweenr.to(elements, { 
     opacity: 1,
     shape: [5, 0],
     duration: 3,
     delay: 0.25
-}).on('complete', function(ev) {
-    console.log(ev.target[0].shape)
 })
 
 /*
@@ -83,9 +81,15 @@ tweenr.to(elements, {
 */
 ```
 
-#### `tweenr.clear()`
+#### `tweenr.push(tween)`
 
-Clears all tweens stored in this ticker instance, cancelling them and completing them if they were active.
+Pushes a generic tween object onto the stack. Like `tweenr.to(tween)` but more explicit.
+
+```js
+var array = require('tween-array')
+tweenr.push(array(start, end, { duration: 5 }))
+    .on('complete', doSomething)
+```
 
 #### `tweenr.dispose()`
 

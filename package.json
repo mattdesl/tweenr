@@ -38,7 +38,8 @@
     "mesh-viewer": "^1.0.0",
     "mouse-position": "^1.0.0",
     "tape": "^3.0.3",
-    "touch-position": "^1.0.3"
+    "touch-position": "^1.0.3",
+    "tween-chain": "^1.0.0"
   },
   "scripts": {
     "test": "node test.js"
