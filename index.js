@@ -17,6 +17,7 @@ function Tweenr(opt) {
     EventEmitter.call(this)
 
     this._handleTick = function(dt) {
+        dt = Math.min(30, dt) //cap delta at 30 ms
         dt /= 1000
         this.emit('tick', dt)
         this.tick(dt)
