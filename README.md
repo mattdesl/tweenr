@@ -107,7 +107,7 @@ This event will stop after `tweenr.dispose()`.
 
 #### `tweenr.cancel()`
 
-Clears and cancels all tweens stored in this tweenr instance.
+Clears and cancels all tweens stored in this tweenr instance. Returns this for chaining.
 
 --
 
