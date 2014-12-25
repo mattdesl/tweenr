@@ -1,6 +1,6 @@
 {
   "name": "tweenr",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "minimal tweening engine",
   "main": "index.js",
   "license": "MIT",
