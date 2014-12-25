@@ -15,7 +15,7 @@
     "inherits": "^2.0.1",
     "mixes": "^1.0.4",
     "raf-loop": "^1.0.0",
-    "tween-ticker": "^3.3.0",
+    "tween-ticker": "^3.3.1",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
