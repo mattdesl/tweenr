@@ -81,6 +81,10 @@ var tween = tweenr.to(elements, {
 */
 ```
 
+#### `tween = tweenr.to()`
+
+If no arguments are given, this method creates an "empty" or dummy tween that can be cancelled. This is similar to the way `noop` functions are used to avoid conditionals in functional programming. 
+
 #### `tweenr.push(tween)`
 
 Pushes a generic tween object onto the stack. Like `tweenr.to(tween)` but more explicit.
@@ -100,6 +104,10 @@ Disposes this instance, removing it from the application-wide frame loop.
 Attaches a function to this tweenr's tick. The event is triggered by the application-wide frame loop with a `delta` parameter in seconds.
 
 This event will stop after `tweenr.dispose()`. 
+
+#### `tweenr.cancel()`
+
+Clears and cancels all tweens stored in this tweenr instance.
 
 --
 
