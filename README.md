@@ -109,6 +109,10 @@ This event will stop after `tweenr.dispose()`.
 
 Clears and cancels all tweens stored in this tweenr instance. Returns this for chaining.
 
+#### `tweenr.timeScale`
+
+A value (default 1.0) which scales the delta time per frame, allowing you to slow down or speed up an instance of tweenr.
+
 --
 
 The return value of `tweenr.to()` is a tween with the following:
